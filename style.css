@@ -14,6 +14,7 @@
                 font-family: 'Varela', sans-serif;
                 font-weight: round;
                 text-align: center;
+                width: 100%;
             }
 
             li {
@@ -29,7 +30,6 @@
                 background-color:whitesmoke;
                 color: #594fc4;
                 font-size: 25px;
-                text-align: center;
             }
             li a:hover {
                 background-color: #594fc4;
@@ -88,6 +88,9 @@
               color: #1A2B6B;
               margin-left: 50px;
               box-shadow: 0 0 20px 5px #950101;
+            }
+            .logo {
+              margin-right: 100px;
             }
 
             h2 {
