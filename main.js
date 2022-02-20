@@ -3495,7 +3495,6 @@
     // console.log(y);
     // return y;
   }
-
   function getRandomNFTs() {
     var nfts = [];
     for (var i=0; i<3; i++) {
@@ -3504,33 +3503,38 @@
     }
     return nfts;
   }
+  var nfts = getRandomNFTs();
 
   function getInfo() {
-    var nfts = getRandomNFTs()
     document.getElementById("image1").src=nfts[0]['imageLink'];
     document.getElementById("image2").src=nfts[1]['imageLink'];
     document.getElementById("image3").src=nfts[2]['imageLink'];
-    for (var i=0; i<3; i++) {
-      let name = nfts[i]['name'];
-      let price = nfts[i]['price'];
-      let openSeaLink = nfts[i]['openSeaLink'];
-      let imageLink = nfts[i]['imageLink'];
-      console.log(name);
-      console.log(price);
-      console.log(openSeaLink);
-      console.log(imageLink);
-
-    }
   }
 
-  function getImageLinks() {
-     var nfts = getRandomNFTs()
-     for (var i=0; i<3; i++) {
-       let imageLink = nfts[i]['imageLink'];
-       console.log(imageLink);
-     }
 
-    } 
+    function processNftPrice() {
+      let nftprices = [];
+      for(var i=0; i<3; i++) {
+        let price = nfts[i]['price'];
+        let priceToFloat = parseFloat(price.substr(1,nftprice.length)) * 1000;
+        nftprices.push({nfts[i]:price});
+      }
+      return nftprices;
 
-  getInfo()
 
+
+      }
+
+    function getMostExpensiveNFT(nftPriceList) {
+       let mostExpensiveNft = -1;
+       for (var i=0; i<nftPriceList.length; i++) {
+         if(nftPriceList[i] > mostExpensiveNft) {
+          mostExpensiveNft
+         }
+       }
+
+      }
+
+  getInfo();
+  let prices = processNftPrice();
+  console.log(prices);
