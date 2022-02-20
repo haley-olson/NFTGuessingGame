@@ -7,9 +7,12 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&family=Sacramento&display=swap" rel="stylesheet">
+       <script id="main"src=""></script>
+
     </head>
 
     <body>
+ 
         <ul>
           <li><img src="nftlogo4.png" alt="NFT logo" class="logo"></li>
           <li><a href="index.html">Home</a></li>
@@ -25,34 +28,49 @@
 
         <div class="wrap">
           <!-- <button onclick="endGame()"> -->
-         <div id="div1"class="container">
+         <div id="div1"class="image1">
           
            <img onclick="endGame()"class="image"id="image1" src="" alt="image" width="300px" height="300px" href="">
-              <div class="text3"></div>
-           
+         <div class="middle1">
+               <div class="text">OpenSea</div>
+             </div>
+          
          </div>
         <!-- </button> -->
         <!-- Other content<h2><img class="image vaccine" src="2020-11-17T040448Z_1054864906_RC2S4K9BIC2W_RTRMADP_3_HEALTH-CORONAVIRUS-USA-PFIZEE.png" alt="vaccine picture"></h2>-->
         <!-- <button onclick="endGame()"> -->
-         <div id="div2"class="container">
+         <div id="div2"class="image2">
              <!--<h1>Why Vaxchain?</h1>-->
             
              <img onclick="endGame()"class="image"id="image2" src="" alt="image" width="300px" height="300px" href="">
-              <div class="text3"></div>
+            <div class="middle2">
+               <div class="text">OpenSea</div>
+             </div>
         
          </div>
          <!-- </button> -->
          <!-- <button onclick="endGame()"> -->
-         <div id="div3"class="container">
+         <div id="div3"class="image3">
              <!--<h1>Why Vaxchain?</h1>-->
              <img onclick="endGame()"class="image"id="image3" src="" alt="image" width="300px" height="300px">
-             <div class="middle">
-              <div class="text3">afasf</div>
-              </div>
+             <div class="middle3">
+               <div class="text">OpenSea</div>
+             </div>
+            
          </div>
          <!-- </button> -->
 
        </div>
+       <script>
+   function load_js()
+   {
+      var head= document.getElementsByTagName('head')[0];
+      var script= document.createElement('script');
+      script.src= './main.js';
+      head.appendChild(script);
+   }
+   load_js();
+</script>
 
        <script src="./main.js"></script>
        <script>
@@ -67,10 +85,11 @@
           //  document.getElementById("image1").href=(document.getElementById("link1").innerHTML);
           //  document.getElementById("image2").href=(document.getElementById("link2").innerHTML);
           // document.getElementById("aimage3").href=(document.getElementById("link3").innerHTML);
-
-
+          document.getElementById("main").src=("./main.js")
+          load_js()
          }
        </script>
+
         <!-- <p class="para">Using blockchain technology, Vaxchain brings innovation to the pandemic by logging vaccinations. With this blockchain, sectors both public and private will have a permanent, unchangeable list of people who have been vaccinated. This makes for a secure way to keep everyone safe during this global crisis.</p>
         <p>© 2021 Vaxchain. All Rights Reserved.</p>-->
     </body>
