@@ -1,27 +1,6 @@
 
   var nfts = {
 
-    "0":
-  {
-   "name": "Asuna #54",
-   "openSeaLink": "https://opensea.io/assets/0xaf615b61448691fc3e4c61ae4f015d6e77b6cca8/54",
-   "imageLink": "https://lh3.googleusercontent.com/MQo8oyR0qSy2knnxXhPSobp1Vo50kTNV_XYwof0NPWDjEdbk-iR2pUq8VIiiF2Ckfhcx1z1OuSK9PRCH5sDWhlt2ndgQCjvoM5Cjnmk=w600",
-   "price": "$31.5k"
-  },
-  "1":
-  {
-   "name": "Asuna #4847",
-   "openSeaLink": "https://opensea.io/assets/0xaf615b61448691fc3e4c61ae4f015d6e77b6cca8/4847",
-   "imageLink": "https://lh3.googleusercontent.com/WuE0Snm9kmior6tJ9i3qTp3nY_yBu-HLToR7sEgY3RQlsjmDE5S5-ZJeIct3a2sLJ7d0lLsgpFaMDepc9yYbxOyx8MtxJUvFnoZUcZQ=w600",
-   "price": "$15.8k"
-  },
-  "2":
-  {
-   "name": "Asuna #53",
-   "openSeaLink": "https://opensea.io/assets/0xaf615b61448691fc3e4c61ae4f015d6e77b6cca8/53",
-   "imageLink": "https://lh3.googleusercontent.com/fuMqTS2b6wrQ4Lz2PRuSJxCV5ugDN8g4iMps8c2S6K6lAUtA-Vrhh9VN956sXQ3FR4Xp8VgoVhQkU3yNtZHyEHvjuhKl36IIya6e=w600",
-   "price": "$15.7k"
-  },
  "0":
 {
   "name": "Asuna #54",
@@ -3486,7 +3465,7 @@
   function getRandomNFT() {
     let x = Math.floor(Math.random() * 493);
     let nft = nfts[x];
-    console.log(nft);
+   // console.log(nft);
     return nft;
     //console.log(nfts[x]['price']);
     // for (const key in nfts) {
@@ -3498,12 +3477,13 @@
   function getRandomNFTs() {
     var nfts = [];
     for (var i=0; i<3; i++) {
-      console.log(i);
+     // console.log(i);
       nfts.push(getRandomNFT());
     }
     return nfts;
   }
   var nfts = getRandomNFTs();
+  var mostExpensiveNftIndex = 0;
 
   function getInfo() {
     document.getElementById("image1").src=nfts[0]['imageLink'];
@@ -3516,8 +3496,8 @@
       let nftprices = [];
       for(var i=0; i<3; i++) {
         let price = nfts[i]['price'];
-        let priceToFloat = parseFloat(price.substr(1,nftprice.length)) * 1000;
-        nftprices.push({nfts[i]:price});
+        let priceToFloat = parseFloat(price.substr(1,price.length)) * 1000;
+        nftprices.push(priceToFloat);
       }
       return nftprices;
 
@@ -3525,16 +3505,33 @@
 
       }
 
-    function getMostExpensiveNFT(nftPriceList) {
-       let mostExpensiveNft = -1;
-       for (var i=0; i<nftPriceList.length; i++) {
+    function getMostExpensiveNFT() {
+       let nftPriceList = processNftPrice();
+       let mostExpensiveNft = nftPriceList[0];
+       for (var i=1; i<nftPriceList.length; i++) {
          if(nftPriceList[i] > mostExpensiveNft) {
-          mostExpensiveNft
+          mostExpensiveNft = nftPriceList[i];
+          mostExpensiveNftIndex = i;
          }
        }
+       console.debug(nfts[mostExpensiveNftIndex]);
 
       }
 
+      function sendOpenSeaLinks() {
+        
+        for (var i=0; i<3; i++) {
+          let name = "link" + (i+1);
+          document.getElementById(name).innerHTML=(nfts[i]['openSeaLink']);
+        }
+      }
+
+    function onNFTClicked() {
+
+    }
   getInfo();
-  let prices = processNftPrice();
-  console.log(prices);
+  getMostExpensiveNFT();
+  document.getElementById("answer").innerHTML=("div" + (mostExpensiveNftIndex+1));
+  sendOpenSeaLinks();
+  // let prices = processNftPrice();
+  // console.log(prices);

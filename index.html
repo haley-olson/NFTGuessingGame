@@ -17,30 +17,59 @@
           <li><a href="faqs.html">Faqs</a></li>
           <li><a href="AboutUs.html">About Us</a></li>
         </ul>
+        
+        <p hidden id="answer">answer</p>
+        <p hidden id="link1">link</p>
+        <p hidden id="link2">link</p>
+        <p hidden id="link3">link</p>
 
         <div class="wrap">
-         <div class="image1">
-           <img id="image1" src="image1.jpg" alt="image" width="200px" height="200px">
-
+          <!-- <button onclick="endGame()"> -->
+         <div id="div1"class="container">
+          
+           <img onclick="endGame()"class="image"id="image1" src="" alt="image" width="300px" height="300px" href="">
+              <div class="text3"></div>
+           
          </div>
-         <!-- Other content<h2><img class="image vaccine" src="2020-11-17T040448Z_1054864906_RC2S4K9BIC2W_RTRMADP_3_HEALTH-CORONAVIRUS-USA-PFIZEE.png" alt="vaccine picture"></h2>-->
-         <div class="image2">
+        <!-- </button> -->
+        <!-- Other content<h2><img class="image vaccine" src="2020-11-17T040448Z_1054864906_RC2S4K9BIC2W_RTRMADP_3_HEALTH-CORONAVIRUS-USA-PFIZEE.png" alt="vaccine picture"></h2>-->
+        <!-- <button onclick="endGame()"> -->
+         <div id="div2"class="container">
              <!--<h1>Why Vaxchain?</h1>-->
-             <img id="image2" src="image1.jpg" alt="image" width="200px" height="200px">
-
+            
+             <img onclick="endGame()"class="image"id="image2" src="" alt="image" width="300px" height="300px" href="">
+              <div class="text3"></div>
+        
          </div>
-
-         <div class="image3">
+         <!-- </button> -->
+         <!-- <button onclick="endGame()"> -->
+         <div id="div3"class="container">
              <!--<h1>Why Vaxchain?</h1>-->
-             <img id="image3" src="image1.jpg" alt="image" width="200px" height="200px">
-
+             <img onclick="endGame()"class="image"id="image3" src="" alt="image" width="300px" height="300px">
+             <div class="middle">
+              <div class="text3">afasf</div>
+              </div>
          </div>
+         <!-- </button> -->
 
        </div>
 
        <script src="./main.js"></script>
        <script>
-           // document.getElementByClass("image3").src = 'https://lh3.googleusercontent.com/NRCFVZGMeFdZHl3jRLGnWePOmc8w1c0_oYxkfnAIVL_fYZIorUZKBAo6HoIzk1A2GopJRqcdwSNT-JoXvHH1lJAqr-drYiYPm_tL-Gw=w600';
+         function endGame() {
+           let answer = document.getElementById("answer").innerHTML;
+           console.log(answer);
+           var el = document.getElementById(answer);
+           document.getElementById("div1").style["boxShadow"] = "0 0 10px 10px red";
+           document.getElementById("div2").style["boxShadow"] = "0 0 10px 10px red";
+           document.getElementById("div3").style["boxShadow"] = "0 0 10px 10px red";
+           el.style["boxShadow"] = "0 0 15px 5px #336600";
+          //  document.getElementById("image1").href=(document.getElementById("link1").innerHTML);
+          //  document.getElementById("image2").href=(document.getElementById("link2").innerHTML);
+          // document.getElementById("aimage3").href=(document.getElementById("link3").innerHTML);
+
+
+         }
        </script>
         <!-- <p class="para">Using blockchain technology, Vaxchain brings innovation to the pandemic by logging vaccinations. With this blockchain, sectors both public and private will have a permanent, unchangeable list of people who have been vaccinated. This makes for a secure way to keep everyone safe during this global crisis.</p>
         <p>© 2021 Vaxchain. All Rights Reserved.</p>-->
