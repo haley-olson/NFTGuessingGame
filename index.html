@@ -5,8 +5,8 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" href="style.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&family=Sacramento&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat&family=Sacramento&display=swap" rel="stylesheet">
        <script id="main"src=""></script>
 
     </head>
@@ -17,53 +17,78 @@
           <li><img src="nftlogo4.png" alt="NFT logo" class="logo"></li>
           <li><a href="index.html">Home</a></li>
           <li><a href="howtoplay.html">How To Play</a></li>
-          <li><a href="faqs.html">Faqs</a></li>
-          <li><a href="AboutUs.html">About Us</a></li>
+          <li><a href="faqs.html">FAQ</a></li>
         </ul>
 
-        <p hidden id="answer">answer</p>
+        <!-- <p hidden id="answer">answer</p>
+        <p hidden id="link1">link</p>
+        <p hidden id="link2">link</p>
+        <p hidden id="link3">link</p> -->
+
+        <div class="wrap">
+          <div></div>
+       
+         <div id="div1"class="image1">
+          
+             <img onclick="endGame()"class="image"id="image1" src="" alt="image" width="300px" height="300px" href="">
+                          <p class="p2">SPACEHOLDER</p>
+             <a id="p1" class="p" href="">OpenSea</a>
+             <!-- <p class="p2">SPACEHOLDER</p> -->
+             <div id="middle1"class="middle1">
+               <div id="text1" class="text">OpenSea</div>
+              </div>
+          
+         </div>
+       
+         <div id="div2"class="image2">
+           
+
+             <img onclick="endGame()"class="image"id="image2" src="" alt="image" width="300px" height="300px" href="">
+                          <p class="p2">SPACEHOLDER</p>
+              <a id="p2" class="p" href="">OpenSea</a>
+                          <!-- <button>Go Again</button> -->
+            <div id="middle2"class="middle2">
+               <div id="text2" class="text">OpenSea</div>
+             </div>
+             
+         </div>
+       
+         <div id="div3"class="image3">
+            
+             <img onclick="endGame()"class="image"id="image3" src="" alt="image" width="300px" height="300px">
+             <p class="p2">SPACEHOLDER</p>
+             <a id="p3" class="p" href="">OpenSea</a>
+              <!-- <p class="p2">SPACEHOLDER</p> -->
+             <div id="middle3"class="middle3">
+               <div id="text3" class="text">OpenSea</div>
+             </div>
+             
+        
+            
+         </div>
+         <div>
+              <button class="playButton" onclick="load_js()">Play Again</button>
+         </div>
+         <p hidden id="answer">answer</p>
         <p hidden id="link1">link</p>
         <p hidden id="link2">link</p>
         <p hidden id="link3">link</p>
-
-        <div class="wrap">
-          <!-- <button onclick="endGame()"> -->
-         <div id="div1"class="image1">
-          
-           <img onclick="endGame()"class="image"id="image1" src="" alt="image" width="300px" height="300px" href="">
-         <div class="middle1">
-               <div class="text">OpenSea</div>
-             </div>
-          
-         </div>
-        <!-- </button> -->
-        <!-- Other content<h2><img class="image vaccine" src="2020-11-17T040448Z_1054864906_RC2S4K9BIC2W_RTRMADP_3_HEALTH-CORONAVIRUS-USA-PFIZEE.png" alt="vaccine picture"></h2>-->
-        <!-- <button onclick="endGame()"> -->
-         <div id="div2"class="image2">
-             <!--<h1>Why Vaxchain?</h1>-->
-
-             <img onclick="endGame()"class="image"id="image2" src="" alt="image" width="300px" height="300px" href="">
-            <div class="middle2">
-               <div class="text">OpenSea</div>
-             </div>
-        
-         </div>
-         <!-- </button> -->
-         <!-- <button onclick="endGame()"> -->
-         <div id="div3"class="image3">
-             <!--<h1>Why Vaxchain?</h1>-->
-             <img onclick="endGame()"class="image"id="image3" src="" alt="image" width="300px" height="300px">
-             <div class="middle3">
-               <div class="text">OpenSea</div>
-             </div>
-            
-         </div>
-         <!-- </button> -->
+        <p hidden id="name1">link</p>
+        <p hidden id="name2">link</p>
+        <p hidden id="name3">link</p>
+       
 
        </div>
        <script>
    function load_js()
    {
+      document.getElementById("div1").style["boxShadow"] = "0 0 0px 0px #950101";
+      document.getElementById("div2").style["boxShadow"] = "0 0 0px 0px #950101";
+      document.getElementById("div3").style["boxShadow"] = "0 0 0px 0px #950101";
+
+      document.getElementById("p1").style["visibility"] = "hidden";
+      document.getElementById("p2").style["visibility"] = "hidden";
+      document.getElementById("p3").style["visibility"] = "hidden";
       var head= document.getElementsByTagName('head')[0];
       var script= document.createElement('script');
       script.src= './main.js';
@@ -78,19 +103,27 @@
            let answer = document.getElementById("answer").innerHTML;
            console.log(answer);
            var el = document.getElementById(answer);
-           document.getElementById("div1").style["boxShadow"] = "0 0 10px 10px red";
-           document.getElementById("div2").style["boxShadow"] = "0 0 10px 10px red";
-           document.getElementById("div3").style["boxShadow"] = "0 0 10px 10px red";
-           el.style["boxShadow"] = "0 0 15px 5px #336600";
-          //  document.getElementById("image1").href=(document.getElementById("link1").innerHTML);
-          //  document.getElementById("image2").href=(document.getElementById("link2").innerHTML);
-          // document.getElementById("aimage3").href=(document.getElementById("link3").innerHTML);
+           document.getElementById("div1").style["boxShadow"] = "0 0 10px 10px #950101";
+           document.getElementById("div2").style["boxShadow"] = "0 0 10px 10px #950101";
+           document.getElementById("div3").style["boxShadow"] = "0 0 10px 10px #950101";
+           el.style["boxShadow"] = "0 0 10px 10px #519259";
+           document.getElementById("p1").style["visibility"] = "visible";
+           document.getElementById("p2").style["visibility"] = "visible";
+           document.getElementById("p3").style["visibility"] = "visible";
+
+           document.getElementById("p1").innerHTML=(document.getElementById("name1").innerHTML);
+           document.getElementById("p2").innerHTML=(document.getElementById("name2").innerHTML);
+           document.getElementById("p3").innerHTML=(document.getElementById("name3").innerHTML);
+
+           document.getElementById("p1").href=(document.getElementById("link1").innerHTML);
+           document.getElementById("p2").href=(document.getElementById("link2").innerHTML);
+           document.getElementById("p3").href=(document.getElementById("link3").innerHTML);
           document.getElementById("main").src=("./main.js")
-          load_js()
+          //load_js()
          }
        </script>
 
-        <!-- <p class="para">Using blockchain technology, Vaxchain brings innovation to the pandemic by logging vaccinations. With this blockchain, sectors both public and private will have a permanent, unchangeable list of people who have been vaccinated. This makes for a secure way to keep everyone safe during this global crisis.</p>
-        <p>© 2021 Vaxchain. All Rights Reserved.</p>-->
+        
+        <p class="footer">© 2022 Guess The NFT. All Rights Reserved.</p>
     </body>
 </html>

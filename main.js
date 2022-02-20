@@ -3476,9 +3476,21 @@
   }
   function getRandomNFTs() {
     var nfts = [];
+    var valid = false;
     for (var i=0; i<3; i++) {
+      let nft = getRandomNFT();
+      for (var i2=0; i2<nfts.length; i2++) {
+        if (nft == nfts[i2]) {
+           valid = true;
+        }
+      }
+      if (valid == false) {
+        nfts.push(getRandomNFT())
+      } else {
+        i--;
+      }
      // console.log(i);
-      nfts.push(getRandomNFT());
+      //nfts.push(getRandomNFT());
     }
     return nfts;
   }
@@ -3496,7 +3508,21 @@
       let nftprices = [];
       for(var i=0; i<3; i++) {
         let price = nfts[i]['price'];
-        let priceToFloat = parseFloat(price.substr(1,price.length)) * 1000;
+        let letter = price.substr(price.length-1, price.length);
+        console.debug(letter);
+        let multiplier = 0;
+        let priceToFloat = 0;
+        if (letter == "M") {
+          priceToFloat = parseFloat(price.substr(1, price.length-1)) * 1000000;
+          
+        } 
+        if (letter == "k") {
+          priceToFloat = parseFloat(price.substr(1, price.length-1)) * 1000;
+          
+        }
+       // let priceToFloat = parseFloat(price.substr(1,price.length-1)) * 1000;
+        //console.debug(priceToFloat);
+        //console.debug(priceToFloat);
         nftprices.push(priceToFloat);
       }
       return nftprices;
@@ -3523,6 +3549,15 @@
         for (var i=0; i<3; i++) {
           let name = "link" + (i+1);
           document.getElementById(name).innerHTML=(nfts[i]['openSeaLink']);
+          //console.log(nfts[i]['openSeaLink']);
+        }
+      }
+
+      function sendNames() {
+        for (var i=0; i<3; i++) {
+          let name = "name" + (i+1);
+          document.getElementById(name).innerHTML=(nfts[i]['name'] + " - " + nfts[i]['price']);
+          console.log((nfts[i]['name'] + " - " + nfts[i]['price']));
         }
       }
 
@@ -3533,5 +3568,6 @@
   getMostExpensiveNFT();
   document.getElementById("answer").innerHTML=("div" + (mostExpensiveNftIndex+1));
   sendOpenSeaLinks();
+  sendNames();
   // let prices = processNftPrice();
   // console.log(prices);
