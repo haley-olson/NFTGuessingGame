@@ -10,8 +10,9 @@
 
         ul {
           list-style-type: none;
-          margin-right: 20px;
-          margin-left: 20px;
+          padding-inline-start: 110px;
+          /* margin-right: 20px;
+          margin-left: 20px; */
           /* padding: 50px 50px 50px 50px; */
           overflow: hidden;
           background-color: #F8F0DF;
@@ -99,7 +100,6 @@
         }
 
         .logo {
-          margin-left: 500px;
           /* margin-right: 10px; */
           width: 200px;
         }
@@ -294,7 +294,7 @@
           font-size: 1.5rem;
           font-weight: normal;
           /* width: 70%; */
-          
+
           /* margin: 10px auto 200px auto; */
           /* text-align: left; */
           /* text-indent: 40px; */
@@ -310,17 +310,16 @@
         }
 
         .paraHead {
-          color: #474034; 
+          color: #474034;
           font-family: 'Montserrat', sans-serif;
           font-weight: 900;
           text-align: center;
           font-size: 1.5rem;
           font-weight: normal;
           /* width: 70%; */
-          
+
           /* margin: 10px auto 200px auto; */
           /* text-align: left; */
           /* text-indent: 40px; */
           font-weight: 100;
         }
-
